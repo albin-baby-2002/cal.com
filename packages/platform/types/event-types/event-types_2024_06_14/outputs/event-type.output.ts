@@ -55,6 +55,7 @@ import {
   TextAreaFieldOutput_2024_06_14,
   TextFieldOutput_2024_06_14,
   UrlFieldOutput_2024_06_14,
+  DateFieldOutput_2024_06_14,
 } from "../outputs/booking-fields.output";
 import type { OutputBookingField_2024_06_14 } from "./booking-fields.output";
 import { ValidateOutputBookingFields_2024_06_14 } from "./booking-fields.output";
@@ -175,10 +176,11 @@ class EventTypeTeam {
   SelectFieldOutput_2024_06_14,
   TextAreaFieldOutput_2024_06_14,
   TextFieldOutput_2024_06_14,
+  DateFieldOutput_2024_06_14,
   BaseBookingLimitsDuration_2024_06_14,
   BusinessDaysWindow_2024_06_14,
   CalendarDaysWindow_2024_06_14,
-  RangeWindow_2024_06_14
+RangeWindow_2024_06_14
 )
 class BaseEventTypeOutput_2024_06_14 {
   @IsInt()
@@ -258,6 +260,7 @@ class BaseEventTypeOutput_2024_06_14 {
       { $ref: getSchemaPath(RadioGroupFieldOutput_2024_06_14) },
       { $ref: getSchemaPath(BooleanFieldOutput_2024_06_14) },
       { $ref: getSchemaPath(UrlFieldOutput_2024_06_14) },
+      { $ref: getSchemaPath(DateFieldOutput_2024_06_14) },
     ],
     type: "array",
   })

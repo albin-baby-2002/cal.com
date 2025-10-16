@@ -39,6 +39,7 @@ import {
   TextFieldInput_2024_06_14,
   TitleDefaultFieldInput_2024_06_14,
   LocationDefaultFieldInput_2024_06_14,
+  DateFieldInput_2024_06_14,
   ValidateInputBookingFields_2024_06_14,
 } from "./booking-fields.input";
 import type { BookingLimitsCount_2024_06_14 } from "./booking-limits-count.input";
@@ -100,6 +101,7 @@ import { Seats_2024_06_14 } from "./seats.input";
   CheckboxGroupFieldInput_2024_06_14,
   RadioGroupFieldInput_2024_06_14,
   BooleanFieldInput_2024_06_14,
+  DateFieldInput_2024_06_14,
   BusinessDaysWindow_2024_06_14,
   CalendarDaysWindow_2024_06_14,
   RangeWindow_2024_06_14,
@@ -179,6 +181,7 @@ class BaseUpdateEventTypeInput {
       { $ref: getSchemaPath(CheckboxGroupFieldInput_2024_06_14) },
       { $ref: getSchemaPath(RadioGroupFieldInput_2024_06_14) },
       { $ref: getSchemaPath(BooleanFieldInput_2024_06_14) },
+      { $ref: getSchemaPath(DateFieldInput_2024_06_14) },
     ],
     type: "array",
   })
@@ -455,16 +458,18 @@ export class UpdateTeamEventTypeInput_2024_06_14 extends BaseUpdateEventTypeInpu
   @Type(() => Host)
   @IsArray()
   @IsOptional()
-  @DocsPropertyOptional({ type: [Host],
+  @DocsPropertyOptional({
+    type: [Host],
     description:
       "Hosts contain specific team members you want to assign to this event type, but if you want to assign all team members, use `assignAllTeamMembers: true` instead and omit this field. For platform customers the hosts can include userIds only of managed users. Provide either hosts or assignAllTeamMembers but not both",
-   })
+  })
   hosts?: Host[];
 
   @IsOptional()
   @IsBoolean()
   @DocsPropertyOptional({
-    description: "If true, all current and future team members will be assigned to this event type. Provide either assignAllTeamMembers or hosts but not both",
+    description:
+      "If true, all current and future team members will be assigned to this event type. Provide either assignAllTeamMembers or hosts but not both",
   })
   assignAllTeamMembers?: boolean;
 

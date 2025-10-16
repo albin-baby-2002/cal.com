@@ -43,6 +43,7 @@ import {
   TitleDefaultFieldInput_2024_06_14,
   LocationDefaultFieldInput_2024_06_14,
   UrlFieldInput_2024_06_14,
+  DateFieldInput_2024_06_14
 } from "./booking-fields.input";
 import type { InputBookingField_2024_06_14 } from "./booking-fields.input";
 import { ValidateInputBookingFields_2024_06_14 } from "./booking-fields.input";
@@ -123,7 +124,8 @@ export const CREATE_EVENT_SLUG_EXAMPLE = "learn-the-secrets-of-masterchief";
   NotesDefaultFieldInput_2024_06_14,
   GuestsDefaultFieldInput_2024_06_14,
   RescheduleReasonDefaultFieldInput_2024_06_14,
-  InputOrganizersDefaultApp_2024_06_14
+  InputOrganizersDefaultApp_2024_06_14,
+  DateFieldInput_2024_06_14
 )
 export class CalVideoSettings {
   @IsOptional()
@@ -232,6 +234,7 @@ class BaseCreateEventTypeInput {
       { $ref: getSchemaPath(CheckboxGroupFieldInput_2024_06_14) },
       { $ref: getSchemaPath(RadioGroupFieldInput_2024_06_14) },
       { $ref: getSchemaPath(BooleanFieldInput_2024_06_14) },
+      { $ref: getSchemaPath(DateFieldInput_2024_06_14) },
       { $ref: getSchemaPath(UrlFieldInput_2024_06_14) },
     ],
     type: "array",
